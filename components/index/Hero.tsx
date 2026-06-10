@@ -21,7 +21,7 @@ export default function Hero() {
                 fill
                 sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
                 priority
-                className="object-cover grayscale group-hover:grayscale-0 hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                className="object-cover transition-all duration-700 scale-105 group-hover:scale-100"
               />
             </div>
             <div className="absolute bottom-6 -right-4 z-20 bg-luxury-navy/95 backdrop-blur-sm border border-luxury-gold/30 p-4 rounded-[16px] shadow-xl min-w-[180px] sm:min-w-[200px]">

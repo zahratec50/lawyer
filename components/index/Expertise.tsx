@@ -54,7 +54,7 @@ export default function Expertise() {
           {areas.map((item, index) => (
             <div
               key={index}
-              className={`group relative bg-luxury-goldLight rounded-[20px] p-6 md:p-8 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-luxury-gold/20 flex flex-col h-full mt-6 md:mt-0 ${
+              className={`group relative bg-luxury-goldLight/25 rounded-[20px] p-6 md:p-8 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-luxury-gold/20 flex flex-col h-full mt-6 md:mt-0 ${
                 index === 1 ? "md:translate-y-8" : ""
               }`}
             >
