@@ -8,7 +8,7 @@ export default function Contact() {
     <section
       id="contact"
       dir="rtl"
-      className="py-24 bg-amber-50 relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-white to-luxury-goldLight to-white relative overflow-hidden"
     >
       <div className="container mx-auto lg:px-24 xl:px-32 px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

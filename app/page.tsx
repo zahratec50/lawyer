@@ -7,7 +7,7 @@ import MyJob from "@/components/index/MyJob";
 export default function LawyerLanding() {
   return (
     <div
-      className="min-h-screen bg-amber-50 text-gray-100 selection:bg-luxury-gold selection:text-luxury-dark overflow-x-hidden"
+      className="min-h-screen bg-gradient-to-b from-white to-luxury-goldLight to-white text-gray-100 selection:bg-luxury-gold selection:text-luxury-dark overflow-x-hidden"
       dir="rtl"
     >
       {/* بخش خوش‌آمدگویی و اطلاعات هیرو */}

@@ -32,7 +32,7 @@ export default function MyJob() {
   return (
     <section
       dir="rtl"
-      className="py-16 md:py-24 bg-gradient-to-b from-white to-amber-50/40 relative overflow-hidden border-b border-luxury-gold/10"
+      className="py-16 md:py-24 bg-gradient-to-b from-white to-luxury-goldLight to-white relative overflow-hidden border-b-[1px] border-luxury-gold/10"
     >
       {/* المان‌های تزئینی پس‌زمینه */}
       <div className="absolute top-0 right-0 w-48 h-48 md:w-72 md:h-72 bg-luxury-gold/5 rounded-full blur-2xl md:blur-3xl -translate-y-1/2 translate-x-1/2"></div>

@@ -23,7 +23,7 @@ export default function Expertise() {
   return (
     <section
       dir="rtl"
-      className="py-16 md:py-24 bg-amber-50 relative border-t border-b border-luxury-gold/10"
+      className="py-16 md:py-24 bg-gradient-to-t from-white to-luxury-goldLight to-white relative border-t-[1px] border-b-[1px] border-luxury-gold/10"
     >
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
