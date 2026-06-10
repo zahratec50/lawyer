@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,9 +118,6 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* src/app/globals.css */
-@import "tailwindcss";
-
 /* ۱. تعریف فونت بدون استفاده از پکیج باگ‌دار گوگل فونت در توربوپک */
 @font-face {
   font-family: 'Vazirmatn';
@@ -183,8 +179,6 @@ body {
     0 8px 15px rgba(0, 0, 0, 0.6),
     0 15px 30px rgba(212, 175, 55, 0.25);
 }
-
-/* بقیه استایل‌های Shadcn در زیر قرار می‌گیرند... */
 
 @layer base {
   * {
