@@ -24,7 +24,7 @@ export default function LawyerLanding() {
       {/* فوتر ساده و شیک */}
       <footer className="bg-luxury-dark border-t border-luxury-gold/5 py-8 text-center text-xs text-gray-500">
         <p>
-          تمامی حقوق مادی و معنوی این وب‌سایت متعلق به دفتر وکالت فوق می‌باشد.
+          تمامی حقوق مادی و معنوی این وب‌سایت متعلق به دفتر وکالت فوق می‌باشد.Ⓒ 2026
         </p>
       </footer>
     </div>

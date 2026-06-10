@@ -57,7 +57,7 @@ export default function MyJob() {
           {areas.map((item, index) => (
             <div
               key={index}
-              className="group relative flex items-start p-5 md:p-6 bg-luxury-goldLight/75 rounded-[16px] border border-luxury-gold/10 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(212,175,55,0.1)] hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-default"
+              className="group relative flex items-start p-5 md:p-6 bg-luxury-goldLight rounded-[16px] border border-luxury-gold/10 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(212,175,55,0.1)] hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-default"
             >
               {/* خط طلایی کناری */}
               <div className="absolute inset-y-0 right-0 w-1 bg-luxury-gold scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></div>

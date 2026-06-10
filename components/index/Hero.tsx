@@ -24,7 +24,7 @@ export default function Hero() {
                 className="object-cover grayscale group-hover:grayscale-0 hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
               />
             </div>
-            <div className="absolute bottom-6 -right-4 z-20 bg-luxury-navy/95 backdrop-blur-sm border border-luxury-gold p-4 rounded-[16px] shadow-xl min-w-[180px] sm:min-w-[200px]">
+            <div className="absolute bottom-6 -right-4 z-20 bg-luxury-navy/95 backdrop-blur-sm border border-luxury-gold/30 p-4 rounded-[16px] shadow-xl min-w-[180px] sm:min-w-[200px]">
               <h3 className="text-white font-bold text-base sm:text-lg">
                 مریم طاهری
               </h3>
@@ -42,7 +42,7 @@ export default function Hero() {
             <span>وکیل پایه یک دادگستری و مشاور حقوقی</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-luxury-dark leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-luxury-navy leading-tight">
             دفاع از حقوق شما، <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-l from-luxury-gold via-luxury-goldLight to-luxury-gold">
               هنر و تخصص ماست
