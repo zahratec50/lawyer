@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <header className="relative min-h-screen flex items-center justify-center pt-24 pb-12 lg:pt-16">
+    <header className="relative min-h-screen flex items-center justify-center pt-6 pb-12 lg:pt-16">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#0B132B_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
       <div className="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
@@ -23,7 +23,7 @@ export default function Hero() {
                 className="object-cover transition-all duration-700 scale-105 group-hover:scale-100"
               />
             </div>
-            <div className="absolute bottom-6 -right-4 z-20 bg-luxury-navy/95 backdrop-blur-sm border border-luxury-gold/30 p-4 rounded-[16px] shadow-xl min-w-[180px] sm:min-w-[200px]">
+            <div className="absolute bottom-6 -right-4 z-20 bg-luxury-navy/95 backdrop-blur-sm border border-luxury-gold/30 p-2 md:p-4 rounded-[16px] shadow-xl min-w-[140px] sm:min-w-[200px]">
               <h3 className="text-white font-bold text-base sm:text-lg">
                 مریم طاهری
               </h3>
@@ -35,7 +35,7 @@ export default function Hero() {
         </div>
 
         {/* متن هیرو - در موبایل بعد از عکس و در دسکتاپ سمت راست قرار می‌گیرد */}
-        <div className="lg:col-span-7 text-center lg:text-right lg:pr-12 xl:pr-24 space-y-6 order-last lg:order-first">
+        <div className="lg:col-span-7 text-center lg:text-right lg:pr-12 xl:pr-24 space-y-2 lg:space-y-6 order-last lg:order-first">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-luxury-gold/10 border border-luxury-gold/30 text-luxury-gold text-xs sm:text-sm animate-pulse">
             <Scale className="w-4 h-4" />
             <span>وکیل پایه یک دادگستری و مشاور حقوقی</span>
@@ -50,7 +50,7 @@ export default function Hero() {
           <p className="text-xl font-bold text-luxury-gold">
             همراه شما در تمامی مراحل رسیدگی حقوقی و قضایی
           </p>
-          <p className="text-gray-700 text-base sm:text-lg font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          <p className="text-gray-700 text-base sm:text-lg font-bold max-w-xl mx-auto lg:mx-0 leading-relaxed">
             با تکیه بر دانش روز، رتبه برتر آزمون وکالت و تعهد مطلق، در
             پیچیده‌ترین پرونده‌های حقوقی و کیفری در کنار شما هستیم تا عدالت جاری
             شود.

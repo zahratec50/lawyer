@@ -9,7 +9,7 @@ export default function Contact() {
     <section
       id="contact"
       dir="rtl"
-      className="py-24 bg-gradient-to-b from-white to-luxury-goldLight to-white relative overflow-hidden"
+      className="py:6 md:py-12 bg-gradient-to-b from-white via-red-50 to-white relative overflow-hidden"
     >
       <div className="container mx-auto lg:px-24 xl:px-32 px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -21,7 +21,7 @@ export default function Contact() {
             <div className="w-16 h-1 bg-luxury-gold rounded-full"></div>
             <p className="text-gray-700 text-sm leading-relaxed font-medium">
               برای دریافت مشاوره حقوقی، بررسی پرونده و ارتباط مستقیم با مریم
-              طاهری وکیل پایه یک دادگستری می‌توانید از راه‌های زیر در ارتباط
+              طاهری وکیل پایه یک دادگستری می‌توانید از طریق راه‌های زیر در ارتباط
               باشید.
             </p>
 

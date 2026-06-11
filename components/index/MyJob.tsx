@@ -1,12 +1,10 @@
 import React from "react";
-import { CheckCircle2 } from "lucide-react";
 
 export default function MyJob() {
-  
   const areas = [
     {
       title: "بررسی اولیه پرونده",
-      desc: "مطالعه دقیق مدارک و ارزیابی شرایط حقوقی پرونده.",
+      desc: "مطالعه مدارک و ارزیابی شرایط حقوقی پرونده.",
     },
     {
       title: "ارائه استراتژی حقوقی",
@@ -14,73 +12,97 @@ export default function MyJob() {
     },
     {
       title: "تنظیم اسناد و لوایح",
-      desc: "تهیه و تنظیم حرفه‌ای دادخواست‌ها، لوایح و قراردادها.",
+      desc: "تهیه حرفه‌ای دادخواست‌ها، لوایح و قراردادها.",
     },
     {
       title: "پیگیری مستمر",
-      desc: "حضور فعال در مراحل رسیدگی و پیگیری وضعیت پرونده.",
+      desc: "نظارت و پیگیری تمامی مراحل رسیدگی پرونده.",
     },
     {
       title: "گزارش‌دهی شفاف",
-      desc: "اطلاع‌رسانی مستمر به موکل درباره روند پرونده.",
+      desc: "اطلاع‌رسانی منظم درباره روند پرونده.",
     },
     {
       title: "دفاع از حقوق موکل",
-      desc: "حفاظت از منافع قانونی موکل در تمامی مراحل رسیدگی.",
+      desc: "پیگیری مؤثر برای حفظ حقوق و منافع قانونی موکل.",
     },
   ];
 
   return (
     <section
       dir="rtl"
-      className="py-16 md:py-24 bg-gradient-to-b from-white to-luxury-goldLight to-white relative overflow-hidden border-b-[1px] border-luxury-gold/10"
+      className="relative py-5 md:py-14 bg-gradient-to-t from-white via-red-50 to-white overflow-hidden"
     >
-      {/* المان‌های تزئینی پس‌زمینه */}
-      <div className="absolute top-0 right-0 w-48 h-48 md:w-72 md:h-72 bg-luxury-gold/5 rounded-full blur-2xl md:blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-luxury-navy/5 rounded-full blur-2xl md:blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+      <div className="absolute top-0 left-0 w-72 h-72 bg-luxury-gold/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-luxury-navy/5 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-5 md:px-12 lg:px-32 relative z-10">
-        {/* هدر بخش - اصلاح فاصله بالا به خاطر حذف دکمه بازگشت */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-luxury-dark mb-4 md:mb-6 leading-tight">
-            کاری که ما برای <span className="text-luxury-gold">شما</span> انجام
-            میدهیم
+      <div className="container mx-auto px-6 lg:px-20 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <span className="inline-flex items-center px-4 py-2 rounded-full border border-luxury-gold/20 bg-luxury-gold/5 text-luxury-gold text-sm font-semibold">
+            فرآیند همکاری
+          </span>
+
+          <h2 className="mt-6 text-3xl md:text-5xl font-black text-luxury-dark">
+            روند رسیدگی به پرونده
           </h2>
-          <p className="text-sm md:text-base text-gray-500 px-2 md:px-0">
-            تعهد ما، ارائه خدمات حقوقی در بالاترین سطح استاندارد با حفظ اصل
-            شفافیت و تسریع در روند پیگیری پرونده‌های شماست.
+
+          <p className="mt-5 text-gray-600 leading-8">
+            هر پرونده با یک فرآیند مشخص، شفاف و هدفمند دنبال می‌شود تا بهترین
+            نتیجه ممکن حاصل گردد.
           </p>
-          <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-transparent via-luxury-gold to-transparent mx-auto mt-6 rounded-full opacity-80"></div>
         </div>
 
-        {/* گرید کارت‌ها - اصلاح بوردرها متناسب با تم تیره کارت */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
-          {areas.map((item, index) => (
-            <div
-              key={index}
-              className="group relative flex items-start p-5 md:p-6 bg-luxury-goldLight/25 rounded-[16px] border border-luxury-gold/10 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(212,175,55,0.1)] hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-default"
-            >
-              {/* خط طلایی کناری */}
-              <div className="absolute inset-y-0 right-0 w-1 bg-luxury-gold scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></div>
+        <div className="grid lg:grid-cols-12 gap-16 items-start">
+          {/* متن سمت راست */}
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-32">
+              <h3 className="text-3xl font-black text-luxury-dark leading-tight">
+                شفافیت در
+                <span className="text-luxury-gold"> تمام مراحل </span>
+                همکاری
+              </h3>
 
-              {/* بخش آیکون */}
-              <div className="flex-shrink-0 ml-4 md:ml-5">
-                <div className="w-10 h-10 md:w-11 md:h-11 flex items-center justify-center rounded-[12px] bg-luxury-navy border border-white/10 text-luxury-gold group-hover:bg-luxury-gold group-hover:text-luxury-dark transition-colors duration-300 shadow-sm">
-                  <CheckCircle2 className="w-5 h-5 md:w-5.5 md:h-5.5" />
-                </div>
-              </div>
+              <p className="mt-6 text-gray-600 leading-8">
+                از نخستین جلسه مشاوره تا پایان فرآیند رسیدگی، تمامی اقدامات
+                حقوقی بر اساس برنامه‌ای مشخص و قابل پیگیری انجام می‌شود.
+              </p>
 
-              {/* بخش متن */}
-              <div className="flex flex-col text-right pt-0.5 md:pt-1">
-                <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-1.5 group-hover:text-luxury-gold transition-colors duration-300">
-                  {item.title}
-                </h3>
-                <p className="text-xs md:text-sm text-gray-500 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                  {item.desc}
+              <div className="mt-8 border-r-2 border-luxury-gold pr-5">
+                <p className="text-luxury-dark font-medium leading-8">
+                  هر مرحله با هدف حفظ حقوق موکل و دستیابی به بهترین نتیجه
+                  برنامه‌ریزی می‌شود.
                 </p>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* تایم لاین */}
+          <div className="lg:col-span-8">
+            {areas.map((item, index) => (
+              <div
+                key={index}
+                className="relative flex gap-5 md:gap-8 pb-10 md:pb-14"
+              >
+                {index !== areas.length - 1 && (
+                  <div className="absolute right-5 top-12 h-full w-px bg-luxury-gold/20" />
+                )}
+
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-luxury-navy text-luxury-gold flex items-center justify-center font-bold flex-shrink-0 shadow-lg">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <div>
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-luxury-dark mb-2">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-600 leading-7 text-sm md:text-base">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -23,7 +23,7 @@ export default function Expertise() {
   return (
     <section
       dir="rtl"
-      className="py-16 md:py-24 bg-gradient-to-t from-white to-luxury-goldLight to-white relative border-t-[1px] border-b-[1px] border-luxury-gold/10"
+      className="py-5 md:py-10 bg-gradient-to-t from-white via-red-50 to-white relative border-t-[1px] border-b-[1px] border-luxury-gold/10"
     >
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -54,9 +54,7 @@ export default function Expertise() {
           {areas.map((item, index) => (
             <div
               key={index}
-              className={`group relative bg-luxury-goldLight/25 rounded-[20px] p-6 md:p-8 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-luxury-gold/20 flex flex-col h-full mt-6 md:mt-0 ${
-                index === 1 ? "md:translate-y-8" : ""
-              }`}
+              className={`group relative bg-luxury-goldLight/25 rounded-[20px] p-6 md:p-8 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-luxury-gold/20 flex flex-col h-full mt-6 md:mt-0`}
             >
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-luxury-gold/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 rounded-t-2xl"></div>
 
@@ -65,10 +63,10 @@ export default function Expertise() {
               </div>
 
               <div className="pt-4 md:pt-10 md:flex-grow">
-                <h3 className="text-sm sm:text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4 group-hover:text-luxury-gold transition-colors duration-300">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4 group-hover:text-luxury-gold transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-xs md:text-sm text-gray-500 leading-loose text-justify group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-xs md:text-sm text-gray-500 leading-loose text-right group-hover:text-gray-700 transition-colors duration-300">
                   {item.desc}
                 </p>
               </div>
