@@ -78,7 +78,7 @@ export default function Contact() {
                     ساعات پاسخگویی
                   </h4>
 
-                  <p className="text-luxury-blue text-xs mt-1">
+                  <p className="text-luxury-blue font-medium text-xs mt-1">
                     شنبه تا پنجشنبه، ۹ صبح تا ۸ شب
                   </p>
                 </div>
