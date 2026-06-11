@@ -4,13 +4,17 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://maryamtaherilawyer.ir"),
 
+  icons: {
+    icon: "/images/icon1.png",
+  },
+
   title: {
     default: "مریم طاهری | وکیل پایه یک دادگستری",
     template: "%s | مریم طاهری",
   },
 
   description:
-    "مریم طاهری، وکیل پایه یک دادگستری و مشاور حقوقی. ارائه خدمات تخصصی در دعاوی ملکی، کیفری، خانواده، قراردادها و مشاوره حقوقی.",
+    "مریم طاهری، وکیل پایه یک دادگستری در اصفهان. ارائه خدمات تخصصی در دعاوی ملکی، کیفری، خانواده، تنظیم قراردادها و مشاوره حقوقی حضوری و آنلاین در سراسر کشور.",
 
   keywords: [
     "مریم طاهری",
@@ -39,7 +43,7 @@ export const metadata: Metadata = {
     locale: "fa_IR",
     url: "https://maryamtaherilawyer.ir",
     siteName: "Maryam Taheri Lawyer",
-    title: "مریم طاهری | وکیل پایه یک دادگستری",
+    title: "مریم طاهری | وکیل پایه یک دادگستری در اصفهان",
     description:
       "ارائه خدمات حقوقی تخصصی در حوزه دعاوی ملکی، کیفری، خانواده و قراردادها.",
     images: [
