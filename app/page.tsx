@@ -3,6 +3,7 @@ import Hero from "@/components/index/Hero";
 import Expertise from "@/components/index/Expertise";
 import Contact from "@/components/index/Contact";
 import MyJob from "@/components/index/MyJob";
+import AboutLawyer from "@/components/index/AboutLawyer";
 
 export default function LawyerLanding() {
   return (
@@ -12,6 +13,8 @@ export default function LawyerLanding() {
     >
       {/* بخش خوش‌آمدگویی و اطلاعات هیرو */}
       <Hero />
+
+      <AboutLawyer />
 
       {/* بخش تخصص‌ها و حوزه‌های کاری */}
       <Expertise />

@@ -8,7 +8,6 @@ export default function Hero() {
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#0B132B_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
       <div className="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
-        
         {/* تصویر فاخر وکیل - در موبایل اول نمایش داده می‌شود و در دسکتاپ به چپ می‌رود */}
         <div className="lg:col-span-5 flex justify-center relative order-first lg:order-last mb-6 lg:mb-0">
           <div className="relative w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[440px] lg:w-96 lg:h-[500px] group">
@@ -42,13 +41,22 @@ export default function Hero() {
             <span>وکیل پایه یک دادگستری و مشاور حقوقی</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-luxury-navy leading-tight">
+          {/* <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-luxury-navy leading-tight">
             دفاع از حقوق شما، <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-l from-luxury-gold via-luxury-goldLight to-luxury-gold">
               هنر و تخصص ماست
             </span>
+          </h1> */}
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-luxury-navy leading-tight">
+            مریم طاهری
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-l from-luxury-gold via-luxury-goldLight to-luxury-gold">
+              وکیل پایه یک دادگستری و مشاور حقوقی
+            </span>
           </h1>
-
+          <p className="text-xl font-bold text-luxury-gold">
+            دفاع از حقوق شما، هنر و تخصص ماست
+          </p>
           <p className="text-gray-700 text-base sm:text-lg font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed">
             با تکیه بر دانش روز، رتبه برتر آزمون وکالت و تعهد مطلق، در
             پیچیده‌ترین پرونده‌های حقوقی و کیفری در کنار شما هستیم تا عدالت جاری
@@ -59,20 +67,33 @@ export default function Hero() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 max-w-lg mx-auto lg:mx-0">
             <div className="p-4 rounded-[16px] bg-luxury-navy backdrop-blur-sm border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all text-center">
               <Award className="w-5 h-5 text-luxury-gold mx-auto mb-2" />
-              <div className="text-[10px] sm:text-xs text-gray-400">رتبه برتر</div>
-              <div className="font-bold text-white mt-1 text-xs sm:text-sm">آزمون کانون وکلا</div>
+              <div className="text-[10px] sm:text-xs text-gray-400">
+                رتبه برتر
+              </div>
+              <div className="font-bold text-white mt-1 text-xs sm:text-sm">
+                آزمون کانون وکلا
+              </div>
             </div>
             <div className="p-4 rounded-[16px] bg-luxury-navy backdrop-blur-sm border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all text-center">
               <FileText className="w-5 h-5 text-luxury-gold mx-auto mb-2" />
-              <div className="text-[10px] sm:text-xs text-gray-400">شماره پروانه</div>
-              <div className="font-bold text-white mt-1 text-xs sm:text-sm tracking-wider" dir="ltr">
+              <div className="text-[10px] sm:text-xs text-gray-400">
+                شماره پروانه
+              </div>
+              <div
+                className="font-bold text-white mt-1 text-xs sm:text-sm tracking-wider"
+                dir="ltr"
+              >
                 ۳۷۰۳۹
               </div>
             </div>
             <div className="p-4 rounded-[16px] bg-luxury-navy backdrop-blur-sm border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all text-center col-span-2 sm:col-span-1">
               <Shield className="w-5 h-5 text-luxury-gold mx-auto mb-2" />
-              <div className="text-[10px] sm:text-xs text-gray-400">میزان قبولی</div>
-              <div className="font-bold text-white mt-1 text-xs sm:text-sm">۱۰۰٪ پرونده‌ها</div>
+              <div className="text-[10px] sm:text-xs text-gray-400">
+                میزان قبولی
+              </div>
+              <div className="font-bold text-white mt-1 text-xs sm:text-sm">
+                ۱۰۰٪ پرونده‌ها
+              </div>
             </div>
           </div>
 
@@ -86,9 +107,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
       </div>
     </header>
   );
 }
-

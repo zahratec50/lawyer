@@ -2,6 +2,7 @@ import React from "react";
 import { MapPin, Phone, Mail, Send, Globe } from "lucide-react";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { AiOutlineWhatsApp } from "react-icons/ai";
+import { Clock } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -15,13 +16,13 @@ export default function Contact() {
           {/* اطلاعات ثابت ارتباطی */}
           <div className="lg:col-span-6 space-y-6">
             <h2 className="text-3xl font-extrabold text-luxury-dark">
-              پل‌های ارتباطی مستقیم
+              تماس با مریم طاهری
             </h2>
             <div className="w-16 h-1 bg-luxury-gold rounded-full"></div>
             <p className="text-gray-700 text-sm leading-relaxed font-medium">
-              دفتر وکالت ما آماده پاسخگویی به سوالات حقوقی شماست. شما می‌توانید
-              از طریق شماره‌های زیر یا شبکه‌های اجتماعی به صورت ۲۴ ساعته با ما
-              در ارتباط باشید.
+              برای دریافت مشاوره حقوقی، بررسی پرونده و ارتباط مستقیم با مریم
+              طاهری وکیل پایه یک دادگستری می‌توانید از راه‌های زیر در ارتباط
+              باشید.
             </p>
 
             <div className="space-y-4 pt-2">
@@ -32,7 +33,7 @@ export default function Contact() {
                     آدرس دفتر مرکزی:
                   </h4>
                   <p className="text-luxury-blue font-bold text-xs mt-1 leading-relaxed">
-                    سهروردی، مجتمع زیتون، طبقه اول
+                    اصفهان، سهروردی، مجتمع زیتون، طبقه اول
                   </p>
                 </div>
               </div>
@@ -43,28 +44,42 @@ export default function Contact() {
                   <h4 className="text-luxury-dark font-bold text-sm">
                     شماره تلفن :
                   </h4>
-                  <p
-                    className="text-luxury-blue text-xs mt-1 font-semibold tracking-wider"
+                  <a
+                    href="tel:+989217127727"
+                    className="text-luxury-blue text-xs mt-1 font-semibold tracking-wider hover:text-luxury-gold transition-colors"
                     dir="ltr"
                   >
                     09217127727
-                  </p>
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4 p-4 rounded-[16px] bg-luxury-goldLight/25 border border-luxury-gold/15 shadow-sm">
-                
-                  <Mail className="w-6 h-6 text-luxury-navy shrink-0" />
-                
+                <Mail className="w-6 h-6 text-luxury-navy shrink-0" />
+
                 <div>
                   <h4 className="text-luxury-dark font-bold text-sm">
                     پست الکترونیک:
                   </h4>
-                  <p
-                    className="text-luxury-blue font-medium text-xs mt-1"
+                  <a
+                    href="mailto:maryamtaheri1475@gmail.com"
+                    className="text-luxury-blue font-medium text-xs mt-1 hover:text-luxury-gold transition-colors"
                     dir="ltr"
                   >
                     maryamtaheri1475@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 p-4 rounded-[16px] bg-luxury-goldLight/25 border border-luxury-gold/15 shadow-sm">
+                <Clock className="w-6 h-6 text-luxury-navy shrink-0" />
+
+                <div>
+                  <h4 className="text-luxury-dark font-bold text-sm">
+                    ساعات پاسخگویی
+                  </h4>
+
+                  <p className="text-luxury-blue text-xs mt-1">
+                    شنبه تا پنجشنبه، ۹ صبح تا ۸ شب
                   </p>
                 </div>
               </div>
@@ -83,7 +98,6 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* اصلاح گرید به حالت منعطف و ریسپانسیو جهت عدم شلوغی متن‌ها */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5" dir="ltr">
               {/* واتساپ */}
               <a
@@ -150,6 +164,16 @@ export default function Contact() {
               </span>
             </div>
           </div>
+        </div>
+        <div className="mt-10 overflow-hidden rounded-[24px] border border-luxury-gold/20">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3360.2637402244027!2d51.6265563!3d32.6257993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fbc37cbe2fa380f%3A0x61f124ccdd4fd362!2z2YXYrNiq2YXYuSDYstuM2KrZiNmG!5e0!3m2!1sfa!2s!4v1781154397850!5m2!1sfa!2s"
+            width="100%"
+            height="420"
+            loading="lazy"
+            allowFullScreen
+            className="w-full"
+          ></iframe>
         </div>
       </div>
     </section>
