@@ -1,10 +1,10 @@
 import React from "react";
-import { Scale, Award, FileText, Shield, ArrowRight } from "lucide-react";
+import { Scale, MapPin, FileText, Shield, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <header className="relative min-h-screen flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-luxury-navy via-luxury-dark to-luxury-dark pt-24 pb-12 lg:pt-16">
+    <header className="relative min-h-screen flex items-center justify-center pt-24 pb-12 lg:pt-16">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#0B132B_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
       <div className="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
@@ -41,21 +41,14 @@ export default function Hero() {
             <span>وکیل پایه یک دادگستری و مشاور حقوقی</span>
           </div>
 
-          {/* <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-luxury-navy leading-tight">
-            دفاع از حقوق شما، <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-l from-luxury-gold via-luxury-goldLight to-luxury-gold">
-              هنر و تخصص ماست
-            </span>
-          </h1> */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-luxury-navy leading-tight">
             مریم طاهری
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-l from-luxury-gold via-luxury-goldLight to-luxury-gold">
-              وکیل پایه یک دادگستری و مشاور حقوقی
-            </span>
           </h1>
+          <h2 className="text-transparent text-xl sm:text-2xl md:text-4xl font-bold bg-clip-text bg-gradient-to-l from-luxury-gold via-luxury-goldLight to-luxury-gold">
+            وکیل پایه یک دادگستری و مشاور حقوقی
+          </h2>
           <p className="text-xl font-bold text-luxury-gold">
-            دفاع از حقوق شما، هنر و تخصص ماست
+            همراه شما در تمامی مراحل رسیدگی حقوقی و قضایی
           </p>
           <p className="text-gray-700 text-base sm:text-lg font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed">
             با تکیه بر دانش روز، رتبه برتر آزمون وکالت و تعهد مطلق، در
@@ -65,15 +58,6 @@ export default function Hero() {
 
           {/* مدال‌ها و رتبه‌ها - کاملا ریسپانسیو */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 max-w-lg mx-auto lg:mx-0">
-            <div className="p-4 rounded-[16px] bg-luxury-navy backdrop-blur-sm border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all text-center">
-              <Award className="w-5 h-5 text-luxury-gold mx-auto mb-2" />
-              <div className="text-[10px] sm:text-xs text-gray-400">
-                رتبه برتر
-              </div>
-              <div className="font-bold text-white mt-1 text-xs sm:text-sm">
-                آزمون کانون وکلا
-              </div>
-            </div>
             <div className="p-4 rounded-[16px] bg-luxury-navy backdrop-blur-sm border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all text-center">
               <FileText className="w-5 h-5 text-luxury-gold mx-auto mb-2" />
               <div className="text-[10px] sm:text-xs text-gray-400">
@@ -86,13 +70,21 @@ export default function Hero() {
                 ۳۷۰۳۹
               </div>
             </div>
-            <div className="p-4 rounded-[16px] bg-luxury-navy backdrop-blur-sm border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all text-center col-span-2 sm:col-span-1">
-              <Shield className="w-5 h-5 text-luxury-gold mx-auto mb-2" />
+            <div className="p-4 rounded-[16px] bg-luxury-navy backdrop-blur-sm border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all text-center">
+              <MapPin className="w-5 h-5 text-luxury-gold mx-auto mb-2" />
               <div className="text-[10px] sm:text-xs text-gray-400">
-                میزان قبولی
+                پذیرش پرونده
               </div>
               <div className="font-bold text-white mt-1 text-xs sm:text-sm">
-                ۱۰۰٪ پرونده‌ها
+                سراسر کشور
+              </div>
+            </div>
+
+            <div className="p-4 rounded-[16px] bg-luxury-navy backdrop-blur-sm border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all text-center col-span-2 sm:col-span-1">
+              <Scale className="w-5 h-5 text-luxury-gold mx-auto mb-2" />
+              <div className="text-[10px] sm:text-xs text-gray-400">مشاوره</div>
+              <div className="font-bold text-white mt-1 text-xs sm:text-sm">
+                حضوری و آنلاین
               </div>
             </div>
           </div>

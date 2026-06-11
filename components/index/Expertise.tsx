@@ -50,7 +50,7 @@ export default function Expertise() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 lg:gap-8">
           {areas.map((item, index) => (
             <div
               key={index}
@@ -60,20 +60,20 @@ export default function Expertise() {
             >
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-luxury-gold/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 rounded-t-2xl"></div>
 
-              <div className="absolute -top-7 right-6 md:right-8 w-14 h-14 md:w-16 md:h-16 bg-luxury-navy rounded-[12px] shadow-lg flex items-center justify-center text-luxury-gold group-hover:bg-luxury-gold group-hover:text-white transition-colors duration-500 rotate-3 group-hover:-rotate-3">
+              <div className="absolute -top-3.5 md:-top-7 right-6 md:right-8 w-10 h-10 md:w-16 md:h-16 bg-luxury-navy rounded-[12px] shadow-lg flex items-center justify-center text-luxury-gold group-hover:bg-luxury-gold group-hover:text-white transition-colors duration-500 rotate-3 group-hover:-rotate-3">
                 {item.icon}
               </div>
 
-              <div className="pt-8 md:pt-10 flex-grow">
-                <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4 group-hover:text-luxury-gold transition-colors duration-300">
+              <div className="pt-4 md:pt-10 md:flex-grow">
+                <h3 className="text-sm sm:text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4 group-hover:text-luxury-gold transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-loose text-justify group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-xs md:text-sm text-gray-500 leading-loose text-justify group-hover:text-gray-700 transition-colors duration-300">
                   {item.desc}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-gray-100 flex justify-end">
+              <div className="mt-0 pt-0 md:mt-8 md:pt-6 border-t border-gray-100 flex justify-end">
                 <div className="w-8 h-1 bg-luxury-gold/20 rounded-full group-hover:w-16 group-hover:bg-luxury-gold transition-all duration-500"></div>
               </div>
             </div>

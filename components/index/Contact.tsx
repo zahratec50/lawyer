@@ -49,7 +49,7 @@ export default function Contact() {
                     className="text-luxury-blue text-xs mt-1 font-semibold tracking-wider hover:text-luxury-gold transition-colors"
                     dir="ltr"
                   >
-                    09217127727
+                    ۰۹۲۱ ۷۱۲ ۷۷۲۷
                   </a>
                 </div>
               </div>
