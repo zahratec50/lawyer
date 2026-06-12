@@ -1,179 +1,369 @@
 import React from "react";
-import { MapPin, Phone, Mail, Send, Globe } from "lucide-react";
-import { IoLogoLinkedin } from "react-icons/io5";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  ArrowUpLeft,
+  Send,
+  Globe,
+} from "lucide-react";
 import { AiOutlineWhatsApp } from "react-icons/ai";
-import { Clock } from "lucide-react";
+import { IoLogoLinkedin } from "react-icons/io5";
 
 export default function Contact() {
   return (
     <section
       id="contact"
       dir="rtl"
-      className="py:6 md:py-12 bg-gradient-to-b from-white via-red-50 to-white relative overflow-hidden"
+      className="relative overflow-hidden py-16 md:py-28 bg-gradient-to-b from-white via-red-50/20 to-white"
     >
-      <div className="container mx-auto lg:px-24 xl:px-32 px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* اطلاعات ثابت ارتباطی */}
-          <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-3xl font-extrabold text-luxury-dark">
-              تماس با مریم طاهری
-            </h2>
-            <div className="w-16 h-1 bg-luxury-gold rounded-full"></div>
-            <p className="text-gray-700 text-sm leading-relaxed font-medium">
-              برای دریافت مشاوره حقوقی، بررسی پرونده و ارتباط مستقیم با مریم
-              طاهری وکیل پایه یک دادگستری می‌توانید از طریق راه‌های زیر در ارتباط
-              باشید.
-            </p>
+      {/* Decorative Blur */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-luxury-gold/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-luxury-navy/5 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="space-y-4 pt-2">
-              <div className="flex items-start gap-4 p-4 rounded-[16px] bg-luxury-goldLight/25 border border-luxury-gold/15 shadow-sm">
-                <MapPin className="w-6 h-6 text-luxury-navy shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-luxury-dark font-bold text-sm">
-                    آدرس دفتر مرکزی:
-                  </h4>
-                  <p className="text-luxury-blue font-bold text-xs mt-1 leading-relaxed">
-                    اصفهان، سهروردی، مجتمع زیتون، طبقه اول
-                  </p>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-20 relative z-10">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="inline-flex items-center px-4 py-2 rounded-full border border-luxury-gold/20 bg-luxury-gold/5 text-luxury-gold text-xs md:text-sm font-semibold">
+            ارتباط با وکیل
+          </span>
+
+          <h2 className="mt-5 text-3xl md:text-5xl font-black text-luxury-dark">
+            تماس با مریم طاهری
+          </h2>
+
+          <p className="mt-5 text-sm md:text-lg text-gray-600 leading-8">
+            برای دریافت مشاوره حقوقی، بررسی پرونده و ارتباط مستقیم با ما در
+            ارتباط باشید.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+          {/* Contact Info */}
+          <div className="lg:col-span-5">
+            <div className="space-y-8">
+              <div className="flex gap-4">
+                <div className="w-11 h-11 rounded-[12px] bg-luxury-gold/10 flex items-center justify-center shrink-0">
+                  <Phone className="w-5 h-5 text-luxury-gold" />
                 </div>
-              </div>
 
-              <div className="flex items-center gap-4 p-4 rounded-[16px] bg-luxury-goldLight/25 border border-luxury-gold/15 shadow-sm">
-                <Phone className="w-6 h-6 text-luxury-navy shrink-0" />
                 <div>
-                  <h4 className="text-luxury-dark font-bold text-sm">
-                    شماره تلفن :
-                  </h4>
+                  <h3 className="font-bold text-luxury-dark">شماره تماس</h3>
+
                   <a
                     href="tel:+989217127727"
-                    className="text-luxury-blue text-xs mt-1 font-semibold tracking-wider hover:text-luxury-gold transition-colors"
                     dir="ltr"
+                    className="text-gray-600 hover:text-luxury-gold transition-colors"
                   >
                     ۰۹۲۱ ۷۱۲ ۷۷۲۷
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 rounded-[16px] bg-luxury-goldLight/25 border border-luxury-gold/15 shadow-sm">
-                <Mail className="w-6 h-6 text-luxury-navy shrink-0" />
+              <div className="flex gap-4">
+                <div className="w-11 h-11 rounded-[12px] bg-luxury-gold/10 flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5 text-luxury-gold" />
+                </div>
 
                 <div>
-                  <h4 className="text-luxury-dark font-bold text-sm">
-                    پست الکترونیک:
-                  </h4>
+                  <h3 className="font-bold text-luxury-dark">پست الکترونیک</h3>
+
                   <a
                     href="mailto:maryamtaheri1475@gmail.com"
-                    className="text-luxury-blue font-medium text-xs mt-1 hover:text-luxury-gold transition-colors"
-                    dir="ltr"
+                    className="text-gray-600 hover:text-luxury-gold transition-colors break-all"
                   >
                     maryamtaheri1475@gmail.com
                   </a>
                 </div>
               </div>
-              <div className="flex items-center gap-4 p-4 rounded-[16px] bg-luxury-goldLight/25 border border-luxury-gold/15 shadow-sm">
-                <Clock className="w-6 h-6 text-luxury-navy shrink-0" />
+
+              <div className="flex gap-4">
+                <div className="w-11 h-11 rounded-[12px] bg-luxury-gold/10 flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-luxury-gold" />
+                </div>
 
                 <div>
-                  <h4 className="text-luxury-dark font-bold text-sm">
-                    ساعات پاسخگویی
-                  </h4>
+                  <h3 className="font-bold text-luxury-dark">آدرس دفتر</h3>
 
-                  <p className="text-luxury-blue font-medium text-xs mt-1">
+                  <p className="text-gray-600 leading-7">
+                    اصفهان، سهروردی، مجتمع زیتون، طبقه اول
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="w-11 h-11 rounded-[12px] bg-luxury-gold/10 flex items-center justify-center shrink-0">
+                  <Clock className="w-5 h-5 text-luxury-gold" />
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-luxury-dark">ساعات پاسخگویی</h3>
+
+                  <p className="text-gray-600">
                     شنبه تا پنجشنبه، ۹ صبح تا ۸ شب
                   </p>
                 </div>
               </div>
+              {/* Location Preview */}
+              <div className="mt-12 md:mt-16">
+                <a
+                  href="https://maps.app.goo.gl/HRGokgTweSuTHfse6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                            group
+                            relative
+                            block
+                            overflow-hidden
+                            rounded-[28px]
+                            border
+                            border-luxury-gold/15
+                            bg-gradient-to-br
+                            from-luxury-navy
+                            via-luxury-navy
+                            to-luxury-blue
+                            p-5
+                            md:p-8
+                            transition-all
+                            duration-500
+                            hover:border-luxury-gold/40
+                            hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+                          "
+                >
+                  {/* Background Decoration */}
+                  <div className="absolute top-0 left-0 w-40 h-40 bg-luxury-gold/5 rounded-full blur-3xl" />
+
+                  <div className="relative z-10">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                      {/* Content */}
+                      <div>
+                        <span
+                          className="
+                                  inline-flex
+                                  items-center
+                                  gap-2
+                                  rounded-full
+                                  bg-luxury-gold/10
+                                  px-3
+                                  py-1.5
+                                  text-xs
+                                  font-semibold
+                                  text-luxury-gold
+                                "
+                        >
+                          <MapPin className="w-3.5 h-3.5" />
+                          موقعیت دفتر
+                        </span>
+
+                        <h3
+                          className="
+                                  mt-4
+                                  text-xl
+                                  md:text-3xl
+                                  font-black
+                                  text-white
+                                "
+                        >
+                          دفتر وکالت مریم طاهری
+                        </h3>
+
+                        <p
+                          className="
+                                  mt-3
+                                  text-sm
+                                  md:text-base
+                                  leading-7
+                                  text-gray-300
+                                  max-w-xl
+                                "
+                        >
+                          اصفهان، سهروردی، مجتمع زیتون، طبقه اول
+                        </p>
+
+                        <div
+                          className="
+                                mt-5
+                                inline-flex
+                                items-center
+                                gap-2
+                                text-luxury-gold
+                                font-semibold
+                                text-sm
+                              "
+                        >
+                          مشاهده مسیر در Google Maps
+                          <ArrowUpLeft
+                            className="
+                                    w-4
+                                    h-4
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1
+                                    group-hover:translate-x-1
+                                  "
+                          />
+                        </div>
+                      </div>
+
+                      {/* Right Icon */}
+                      <div
+                        className="
+                                  hidden
+                                  md:flex
+                                  w-20
+                                  h-20
+                                  rounded-[24px]
+                                  bg-luxury-gold/10
+                                  items-center
+                                  justify-center
+                                  shrink-0
+                                  shadow-lg
+                                "
+                      >
+                        <MapPin className="w-10 h-10 text-luxury-gold" />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* شبکه‌های اجتماعی لوکس - اصلاح ساختار گرید برای موبایل */}
-          <div className="lg:col-span-6 bg-gradient-to-br from-luxury-goldLight/30 to-luxury-goldLight/15 p-6 sm:p-8 rounded-[24px] border border-luxury-gold/20 shadow-xl space-y-6">
-            <div className="text-center space-y-2">
-              <h3 className="text-xl font-bold text-luxury-dark">
-                شبکه‌های اجتماعی و ارتباط آنلاین
-              </h3>
-              <p className="text-gray-700 text-xs px-4">
-                برای مشاهده تحلیل‌های حقوقی روزانه و ارتباط سریع‌تر، ما را دنبال
-                کنید
-              </p>
-            </div>
+          {/* Luxury CTA */}
+          <div className="lg:col-span-7">
+            <div
+              className="
+                relative
+                overflow-hidden
+                rounded-[28px]
+                border
+                border-white/10
+                bg-[#07111f]
+                p-6
+                md:p-10
+                shadow-[0_25px_80px_rgba(0,0,0,0.25)]
+              "
+            >
+              {/* Background */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-luxury-dark/10 blur-3xl" />
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5" dir="ltr">
-              {/* واتساپ */}
-              <a
-                href="https://wa.me/message/LKIGZ6PEI7EZP1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-4 rounded-[16px] bg-luxury-navy border border-luxury-navy/10 hover:border-luxury-gold transition-all duration-300 group text-center"
-              >
-                <AiOutlineWhatsApp className="w-7 h-7 text-luxury-gold mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-white text-xs font-semibold">واتساپ</span>
-                <span className="text-gray-500 text-[9px] mt-1 tracking-tight truncate w-full">
-                  @lawyer_handle
-                </span>
-              </a>
+                <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-luxury-dark/5 blur-3xl" />
 
-              {/* لینکدین */}
-              <a
-                href="https://www.linkedin.com/in/maryam-taheri-6a1930266"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-4 rounded-[16px] bg-luxury-navy border border-luxury-gold/10 hover:border-luxury-gold transition-all duration-300 group text-center"
-              >
-                <IoLogoLinkedin className="w-7 h-7 text-luxury-gold mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-white text-xs font-semibold">
-                  لینکدین
-                </span>
-                <span className="text-gray-500 text-[9px] mt-1 tracking-tight truncate w-full">
-                  lawyer-profile
-                </span>
-              </a>
+                <div className="absolute inset-0 bg-luxury-navy/40" />
+              </div>
 
-              {/* تلگرام */}
-              <a
-                href="https://t.me/LawyerMaryamTaheri"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-4 rounded-[16px] bg-luxury-navy border border-luxury-gold/10 hover:border-luxury-gold transition-all duration-300 group text-center"
-              >
-                <Send className="w-7 h-7 text-luxury-gold mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-white text-xs font-semibold">تلگرام</span>
-                <span className="text-gray-500 text-[9px] mt-1 tracking-tight truncate w-full">
-                  @MaryamTaheri
+              <div className="relative z-10">
+                <span
+                  className="
+                    inline-flex
+                    items-center
+                    rounded-full
+                    border
+                    border-luxury-gold/20
+                    bg-luxury-gold/5
+                    px-3
+                    py-1.5
+                    text-xs
+                    text-luxury-gold
+                  "
+                >
+                  مشاوره تخصصی حقوقی
                 </span>
-              </a>
 
-              {/* ایتا */}
-              <a
-                href="https://eitaa.com/LawyerMaryamTaheri"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-4 rounded-[16px] bg-luxury-navy border border-luxury-gold/10 hover:border-luxury-gold transition-all duration-300 group text-center"
-              >
-                <Globe className="w-7 h-7 text-luxury-gold mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-white text-xs font-semibold">ایتا</span>
-                <span className="text-gray-500 text-[9px] mt-1 tracking-tight truncate w-full">
-                  @MaryamTaheri
-                </span>
-              </a>
-            </div>
+                <h3 className="mt-5 text-2xl md:text-5xl font-black leading-tight text-white">
+                  پرونده شما نیاز به
+                  <span className="block mt-1 text-luxury-gold">
+                    بررسی تخصصی دارد؟
+                  </span>
+                </h3>
 
-            <div className="pt-4 border-t border-luxury-blue/10 text-center">
-              <span className="text-xs text-luxury-blue italic font-medium">
-                حق، گرفتنی است؛ با دانش و قانون در کنارتان هستیم.
-              </span>
+                <p className="mt-6 max-w-xl text-sm md:text-base leading-8 text-white/65">
+                  پیش از هر اقدام حقوقی، پرونده شما با دقت بررسی شده و
+                  مناسب‌ترین راهکار قانونی برای دستیابی به بهترین نتیجه ارائه
+                  خواهد شد.
+                </p>
+
+                <a
+                  href="https://wa.me/message/LKIGZ6PEI7EZP1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    mt-8
+                    flex
+                    items-center
+                    justify-between
+                    rounded-[14px]
+                    border
+                    border-luxury-gold/20
+                    bg-white/5
+                    backdrop-blur-sm
+                    px-5
+                    py-5
+                    group
+                    transition-all
+                    duration-300
+                    hover:border-luxury-gold
+                    hover:bg-luxury-blue/30
+                    hover:-translate-y-1
+                  "
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-[12px] bg-luxury-gold/15">
+                      <AiOutlineWhatsApp className="w-7 h-7 text-luxury-gold" />
+                    </div>
+
+                    <div>
+                      <p className="font-bold text-white">
+                        شروع مشاوره در واتساپ
+                      </p>
+
+                      <p className="text-sm text-white/50">
+                        پاسخگویی در کوتاه‌ترین زمان ممکن
+                      </p>
+                    </div>
+                  </div>
+
+                  <ArrowUpLeft className="h-5 w-5 text-luxury-gold transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                </a>
+
+                <div className="my-8 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+                <div className="flex flex-wrap justify-center gap-6">
+                  <a
+                    href="https://t.me/LawyerMaryamTaheri"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-white/60 hover:text-luxury-gold transition-colors"
+                  >
+                    <Send className="w-4 h-4 " />
+                    تلگرام
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/maryam-taheri-6a1930266"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-white/60 hover:text-luxury-gold transition-colors"
+                  >
+                    <IoLogoLinkedin className="w-4 h-4" />
+                    لینکدین
+                  </a>
+
+                  <a
+                    href="https://eitaa.com/LawyerMaryamTaheri"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-white/60 hover:text-luxury-gold transition-colors"
+                  >
+                    <Globe className="w-4 h-4" />
+                    ایتا
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="mt-10 overflow-hidden rounded-[24px] border border-luxury-gold/20">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3360.2637402244027!2d51.6265563!3d32.6257993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fbc37cbe2fa380f%3A0x61f124ccdd4fd362!2z2YXYrNiq2YXYuSDYstuM2KrZiNmG!5e0!3m2!1sfa!2s!4v1781154397850!5m2!1sfa!2s"
-            width="100%"
-            height="420"
-            loading="lazy"
-            allowFullScreen
-            className="w-full"
-          ></iframe>
         </div>
       </div>
     </section>
