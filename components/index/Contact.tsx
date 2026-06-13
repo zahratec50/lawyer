@@ -108,7 +108,7 @@ export default function Contact() {
               {/* Location Preview */}
               <div className="mt-12 md:mt-16">
                 <a
-                  href="https://maps.app.goo.gl/HRGokgTweSuTHfse6"
+                  href="https://www.google.com/maps/search/?api=1&query=اصفهان+سهروردی+مجتمع+زیتون"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
