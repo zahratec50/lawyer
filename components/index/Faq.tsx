@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { Plus, HelpCircle } from "lucide-react";
+import { useId, useRef, useState, type KeyboardEvent } from "react";
+import { Phone, Plus } from "lucide-react";
+import { AiOutlineWhatsApp } from "react-icons/ai";
 
 const faqs = [
   {
@@ -28,111 +29,200 @@ const faqs = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const instanceId = useId();
+  const triggers = useRef<(HTMLButtonElement | null)[]>([]);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((f) => ({
+    mainEntity: faqs.map((item) => ({
       "@type": "Question",
-      name: f.q,
+      name: item.q,
       acceptedAnswer: {
         "@type": "Answer",
-        text: f.a,
+        text: item.a,
       },
     })),
+  };
+
+  // Arrow keys / Home / End move between questions
+  const handleKeyDown = (event: KeyboardEvent, index: number) => {
+    const last = faqs.length - 1;
+    let next: number | null = null;
+
+    if (event.key === "ArrowDown") next = index === last ? 0 : index + 1;
+    else if (event.key === "ArrowUp") next = index === 0 ? last : index - 1;
+    else if (event.key === "Home") next = 0;
+    else if (event.key === "End") next = last;
+
+    if (next !== null) {
+      event.preventDefault();
+      triggers.current[next]?.focus();
+    }
   };
 
   return (
     <section
       id="faq"
       dir="rtl"
-      className="relative overflow-hidden border-y border-line bg-gradient-to-b from-paper via-paper to-paper-warm py-16 md:py-28"
+      aria-labelledby={`${instanceId}-title`}
+      className="relative isolate overflow-hidden bg-paper py-16 sm:py-24 lg:py-32"
     >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Golden Glow */}
-      <div className="absolute top-0 right-0 h-80 w-80 rounded-full bg-gold-light/10 blur-3xl pointer-events-none" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-28 top-20 -z-10 h-80 w-80 rounded-full bg-gold/5 blur-3xl"
+      />
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-20">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold-light/10 px-4 py-2 text-sm font-medium text-gold">
-            <HelpCircle className="h-4 w-4" />
-            پرسش‌های متداول
-          </span>
+      <div className="container mx-auto px-5 sm:px-8 lg:px-16">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+          {/* Intro + direct help */}
+          <header className="lg:sticky lg:top-32 lg:h-fit">
+            <h2
+              id={`${instanceId}-title`}
+              className="font-display text-3xl font-semibold leading-[1.7] text-ink sm:text-4xl lg:text-[3rem]"
+            >
+              پیش از تصمیم‌گیری، آگاه باشید.
+            </h2>
 
-          <h2 className="mt-5 font-display text-3xl font-semibold text-ink md:text-5xl">
-            سوالی دارید؟
-          </h2>
+            <p className="mt-5 max-w-md text-sm leading-8 text-ink-soft sm:text-base sm:leading-9">
+              پاسخ پرسش‌های رایج درباره مشاوره حقوقی، روند همکاری و پیگیری
+              پرونده‌ها؛ برای شروعی آگاهانه و مطمئن.
+            </p>
 
-          <p className="mt-5 text-base leading-8 text-ink-soft">
-            پاسخ چند پرسش پرتکرار موکلان درباره روند همکاری، مشاوره و پیگیری
-            پرونده‌ها.
-          </p>
-        </div>
+            <div className="mt-8 hidden border-t border-line pt-6 lg:block">
+              <p className="text-sm font-medium text-ink">
+                پاسخ پرسش خود را پیدا نکردید؟
+              </p>
+              <p className="mt-1.5 text-xs leading-6 text-ink-soft">
+                برای بررسی شرایط خود، مستقیم پیام بدهید یا تماس بگیرید.
+              </p>
 
-        <div className="mx-auto max-w-3xl space-y-4">
-          {faqs.map((item, index) => {
-            const isOpen = openIndex === index;
-
-            return (
-              <div
-                key={item.q}
-                className={`
-                  overflow-hidden
-                  rounded-2xl
-                  border
-                  transition-all
-                  duration-300
-
-                  ${
-                    isOpen
-                      ? "border-gold/30 bg-paper shadow-[0_18px_45px_rgba(22,32,43,.08)]"
-                      : "border-line bg-paper hover:border-gold/20 hover:shadow-lg"
-                  }
-                `}
-              >
-                <button
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between px-6 py-5 text-right"
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a
+                  href="https://wa.me/message/LKIGZ6PEI7EZP1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-medium text-surface transition-colors hover:bg-primary-dark"
                 >
-                  <span className="font-medium text-ink md:text-lg">
-                    {item.q}
-                  </span>
+                  <AiOutlineWhatsApp
+                    aria-hidden="true"
+                    className="h-4.5 w-4.5"
+                  />
+                  واتساپ
+                </a>
+                <a
+                  href="tel:+989217127727"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-primary/25 px-5 text-sm font-medium text-primary transition-colors hover:border-primary"
+                >
+                  <Phone aria-hidden="true" className="h-4 w-4" />
+                  تماس
+                </a>
+              </div>
+            </div>
+          </header>
+
+          {/* Questions: a ruled list, answers open under their question */}
+          <div className="min-w-0 border-t border-line">
+            {faqs.map((item, index) => {
+              const isOpen = openIndex === index;
+              const questionId = `${instanceId}-question-${index}`;
+              const answerId = `${instanceId}-answer-${index}`;
+
+              return (
+                <article key={item.q} className="group border-b border-line">
+                  <h3>
+                    <button
+                      ref={(el) => {
+                        triggers.current[index] = el;
+                      }}
+                      id={questionId}
+                      type="button"
+                      aria-expanded={isOpen}
+                      aria-controls={answerId}
+                      onClick={() => setOpenIndex(isOpen ? null : index)}
+                      onKeyDown={(event) => handleKeyDown(event, index)}
+                      className="flex w-full items-start gap-5 py-5 text-right sm:py-6"
+                    >
+                      <span
+                        className={`flex-1 text-[15px] font-medium leading-8 transition-colors duration-200 sm:text-base ${
+                          isOpen
+                            ? "text-primary"
+                            : "text-ink group-hover:text-primary"
+                        }`}
+                      >
+                        {item.q}
+                      </span>
+
+                      <span
+                        aria-hidden="true"
+                        className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                          isOpen
+                            ? "rotate-45 border-primary bg-primary text-surface"
+                            : "border-line text-ink-soft group-hover:border-gold group-hover:text-gold-deep"
+                        }`}
+                      >
+                        <Plus className="h-4 w-4" strokeWidth={1.6} />
+                      </span>
+                    </button>
+                  </h3>
 
                   <div
-                    className={`
-                      flex h-9 w-9 items-center justify-center rounded-full
-                      transition-all duration-300
-
-                      ${
-                        isOpen
-                          ? "bg-gold text-paper rotate-45"
-                          : "bg-gold-light/10 text-gold"
-                      }
-                    `}
+                    id={answerId}
+                    role="region"
+                    aria-labelledby={questionId}
+                    inert={!isOpen}
+                    className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
                   >
-                    <Plus className="h-5 w-5" />
-                  </div>
-                </button>
-
-                <div
-                  className={`grid transition-all duration-300 ${
-                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <div className="border-t border-line/70 px-6 pb-6 pt-5">
-                      <p className="leading-8 text-ink-soft">{item.a}</p>
+                    <div className="overflow-hidden">
+                      <div className="mb-6 ml-14 border-r-2 border-gold/60 pr-5 sm:mb-7">
+                        <p className="max-w-xl text-sm leading-9 text-ink-soft sm:text-[15px]">
+                          {item.a}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </article>
+              );
+            })}
+
+            {/* Mobile help (desktop version lives beside the heading) */}
+            <div className="mt-8 lg:hidden">
+              <p className="text-sm font-medium text-ink">
+                پاسخ پرسش خود را پیدا نکردید؟
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a
+                  href="https://wa.me/message/LKIGZ6PEI7EZP1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-medium text-surface transition-colors hover:bg-primary-dark"
+                >
+                  <AiOutlineWhatsApp
+                    aria-hidden="true"
+                    className="h-4.5 w-4.5"
+                  />
+                  واتساپ
+                </a>
+                <a
+                  href="tel:+989217127727"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-primary/25 px-5 text-sm font-medium text-primary transition-colors hover:border-primary"
+                >
+                  <Phone aria-hidden="true" className="h-4 w-4" />
+                  تماس
+                </a>
               </div>
-            );
-          })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

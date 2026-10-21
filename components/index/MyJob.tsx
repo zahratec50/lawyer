@@ -1,116 +1,224 @@
-import React from "react";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import {
+  ArrowLeft,
+  Compass,
+  FileSearch,
+  FileText,
+  MessageSquareText,
+  RefreshCw,
+  Scale,
+} from "lucide-react";
+
+// This content IS a sequence, so numbered steps and a connecting line are
+// meaningful here (unlike in the other sections).
+const steps = [
+  {
+    title: "بررسی اولیه پرونده",
+    desc: "مطالعه مدارک و ارزیابی شرایط حقوقی برای تعیین مسیر مناسب.",
+    icon: FileSearch,
+  },
+  {
+    title: "ارائه استراتژی حقوقی",
+    desc: "انتخاب راهکار حقوقی متناسب با شرایط و اهداف پرونده.",
+    icon: Compass,
+  },
+  {
+    title: "تنظیم اسناد و لوایح",
+    desc: "تهیه دادخواست‌ها، لوایح، قراردادها و اسناد موردنیاز.",
+    icon: FileText,
+  },
+  {
+    title: "پیگیری مستمر",
+    desc: "پیگیری مراحل رسیدگی و بررسی آخرین وضعیت پرونده.",
+    icon: RefreshCw,
+  },
+  {
+    title: "گزارش‌دهی شفاف",
+    desc: "ارائه گزارش از روند پرونده و پاسخگویی به پرسش‌های موکل.",
+    icon: MessageSquareText,
+  },
+  {
+    title: "دفاع از حقوق موکل",
+    desc: "دفاع مسئولانه از حقوق و منافع قانونی موکل در مسیر رسیدگی.",
+    icon: Scale,
+  },
+];
+
+const persianDigits = ["۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
 
 export default function MyJob() {
-  const steps = [
-    {
-      title: "بررسی اولیه پرونده",
-      desc: "مطالعه مدارک، بررسی مستندات و ارزیابی دقیق شرایط حقوقی پرونده برای تعیین بهترین مسیر قانونی.",
-    },
-    {
-      title: "ارائه استراتژی حقوقی",
-      desc: "انتخاب مناسب‌ترین راهکار حقوقی متناسب با شرایط و اهداف پرونده.",
-    },
-    {
-      title: "تنظیم اسناد و لوایح",
-      desc: "تهیه حرفه‌ای دادخواست‌ها، لوایح، قراردادها و سایر اسناد موردنیاز.",
-    },
-    {
-      title: "پیگیری مستمر",
-      desc: "پیگیری تمام مراحل رسیدگی و اطلاع از آخرین وضعیت پرونده.",
-    },
-    {
-      title: "گزارش‌دهی شفاف",
-      desc: "ارائه گزارش‌های منظم از روند پرونده و پاسخگویی به پرسش‌های موکل.",
-    },
-    {
-      title: "دفاع از حقوق موکل",
-      desc: "دفاع مؤثر و مسئولانه برای حفظ حقوق و منافع قانونی موکل تا پایان پرونده.",
-    },
-  ];
+  const listRef = useRef<HTMLOListElement>(null);
+  const [reached, setReached] = useState(-1);
+
+  // A step lights up once it passes ~60% of the viewport height
+  useEffect(() => {
+    const list = listRef.current;
+    if (!list) return;
+
+    const items = Array.from(list.children) as HTMLElement[];
+    let ticking = false;
+
+    const update = () => {
+      if (ticking) return;
+      ticking = true;
+
+      window.requestAnimationFrame(() => {
+        const line = window.innerHeight * 0.6;
+        let index = -1;
+
+        items.forEach((item, i) => {
+          if (item.getBoundingClientRect().top < line) index = i;
+        });
+
+        setReached(index);
+        ticking = false;
+      });
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
 
   return (
     <section
       id="process"
       dir="rtl"
-      className="relative overflow-hidden bg-gradient-to-b from-paper to-paper-warm py-16 md:py-28"
+      aria-labelledby="process-title"
+      className="relative isolate overflow-hidden bg-burgundy-dark py-16 text-paper sm:py-24 lg:py-32"
     >
-      {/* Golden Glow */}
-      <div className="absolute left-0 top-20 h-80 w-80 rounded-full bg-gold-light/10 blur-3xl pointer-events-none" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      >
+        <div className="absolute -right-32 -top-40 h-96 w-96 rounded-full bg-gold-light/[0.06] blur-[110px]" />
+        <div className="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-primary/30 blur-[110px]" />
+      </div>
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-20">
-        {/* Heading */}
+      <div className="container mx-auto px-5 sm:px-8 lg:px-16">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+          {/* Intro */}
+          <div className="lg:sticky lg:top-32 lg:h-fit">
+            <h2
+              id="process-title"
+              className="font-display text-3xl font-semibold leading-[1.7] sm:text-4xl lg:text-[2.9rem]"
+            >
+              از بررسی تا پیگیری
+            </h2>
 
-        <div className="mx-auto mb-14 max-w-3xl text-center md:mb-20">
-          <span className="inline-flex items-center rounded-full border border-gold/20 bg-gold-light/10 px-4 py-2 text-sm font-medium text-gold">
-            فرآیند همکاری
-          </span>
+            <p className="mt-5 max-w-md text-sm leading-8 text-paper/70 sm:text-base sm:leading-9">
+              مسیر رسیدگی به هر پرونده با بررسی دقیق شرایط و انتخاب اقدامات
+              متناسب با آن مشخص می‌شود.
+            </p>
 
-          <h2 className="mt-5 font-display text-3xl font-semibold text-ink md:text-5xl">
-            روند رسیدگی به پرونده
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-ink-soft">
-            هر پرونده با فرآیندی مشخص، شفاف و هدفمند مدیریت می‌شود تا بهترین
-            نتیجه ممکن برای موکل حاصل گردد.
-          </p>
-        </div>
-
-        <div className="grid gap-14 lg:grid-cols-12">
-          {/* Left Side */}
-
-          <div className="lg:col-span-4">
-            <div className="lg:sticky lg:top-32">
-              <h3 className="font-display text-3xl font-semibold leading-tight text-ink md:text-4xl">
-                شفافیت در
-                <span className="text-gold"> تمام مراحل </span>
-                همکاری
-              </h3>
-
-              <p className="mt-6 leading-8 text-ink-soft">
-                از نخستین جلسه مشاوره تا پایان رسیدگی، تمامی اقدامات حقوقی بر
-                اساس برنامه‌ای مشخص، شفاف و قابل پیگیری انجام می‌شود.
+            <div className="mt-8 hidden border-t border-paper/15 pt-6 lg:block">
+              <p className="text-sm leading-7 text-paper/65">
+                برای آگاهی از مسیر مناسب پرونده خود، شرایط را مطرح کنید.
               </p>
 
-              <div className="mt-8 border-r-2 border-gold pr-5">
-                <p className="leading-8 text-ink">
-                  هر مرحله با هدف حفظ حقوق موکل، کاهش ریسک‌های حقوقی و دستیابی
-                  به بهترین نتیجه برنامه‌ریزی می‌شود.
-                </p>
-              </div>
+              <a
+                href="#contact"
+                className="group mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-gold-light transition-colors hover:text-paper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-light"
+              >
+                برای بررسی شرایط پرونده تماس بگیرید
+                <ArrowLeft
+                  aria-hidden="true"
+                  className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
+                />
+              </a>
             </div>
           </div>
 
           {/* Timeline */}
+          <ol ref={listRef} className="min-w-0">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              const isReached = index <= reached;
+              const isLast = index === steps.length - 1;
 
-          <div className="lg:col-span-8">
-            <div className="space-y-10">
-              {steps.map((item, index) => (
-                <div
-                  key={index}
-                  className="group relative flex items-start gap-6"
+              return (
+                <li
+                  key={step.title}
+                  className="relative flex gap-5 pb-10 last:pb-0 sm:gap-6"
                 >
-                  {index !== steps.length - 1 && (
-                    <div className="absolute right-[27px] top-14 h-full w-px bg-gradient-to-b from-gold via-gold/40 to-transparent" />
+                  {/* Connector to the next step */}
+                  {!isLast && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute bottom-0 right-[19.5px] top-10 w-px bg-paper/15"
+                    >
+                      <span
+                        className={`absolute inset-0 origin-top bg-gold-light transition-transform duration-700 ease-out ${
+                          index < reached ? "scale-y-100" : "scale-y-0"
+                        }`}
+                      />
+                    </span>
                   )}
 
-                  {/* Number */}
+                  {/* Node */}
+                  <span
+                    aria-hidden="true"
+                    className={`relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border font-display text-lg font-semibold transition-colors duration-500 ${
+                      isReached
+                        ? "border-gold-light bg-gold-light text-burgundy-dark"
+                        : "border-paper/25 bg-burgundy-dark text-paper/60"
+                    }`}
+                  >
+                    {persianDigits[index]}
+                  </span>
 
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary text-paper font-semibold shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:bg-primary-dark">
-                    {String(index + 1).padStart(2, "0")}
+                  {/* Content */}
+                  <div className="min-w-0 flex-1 pt-1">
+                    <div className="flex items-center gap-2.5">
+                      <Icon
+                        aria-hidden="true"
+                        className="h-4 w-4 shrink-0 text-gold-light/70"
+                        strokeWidth={1.5}
+                      />
+                      <h3
+                        className={`font-display text-lg font-semibold leading-8 transition-colors duration-500 sm:text-xl ${
+                          isReached ? "text-paper" : "text-paper/70"
+                        }`}
+                      >
+                        <span className="sr-only">
+                          مرحله {persianDigits[index]}:{" "}
+                        </span>
+                        {step.title}
+                      </h3>
+                    </div>
+
+                    <p className="mt-1.5 max-w-md text-sm leading-8 text-paper/70">
+                      {step.desc}
+                    </p>
                   </div>
+                </li>
+              );
+            })}
+          </ol>
 
-                  {/* Card */}
+          {/* Mobile closing action */}
+          <div className="border-t border-paper/15 pt-6 lg:hidden">
+            <p className="text-sm leading-7 text-paper/65">
+              برای آگاهی از مسیر مناسب پرونده خود، شرایط را مطرح کنید.
+            </p>
 
-                  <div className="flex-1 rounded-2xl border border-line bg-paper p-6 transition-all duration-300 group-hover:border-gold/25 group-hover:shadow-[0_20px_45px_rgba(22,32,43,.08)]">
-                    <h3 className="mb-3 text-xl font-semibold text-ink">
-                      {item.title}
-                    </h3>
-
-                    <p className="leading-8 text-ink-soft">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <a
+              href="#contact"
+              className="group mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-gold-light transition-colors hover:text-paper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-light"
+            >
+              برای بررسی شرایط پرونده تماس بگیرید
+              <ArrowLeft
+                aria-hidden="true"
+                className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
+              />
+            </a>
           </div>
         </div>
       </div>

@@ -2,12 +2,12 @@
 @import "tw-animate-css";
 
 /* ==========================================================================
-   Design tokens
-   Palette: warm ivory paper + ink charcoal + deep burgundy + muted brass
-   (chosen to move away from the generic navy/gold "corporate lawyer" template)
+   Maryam Taheri Law Office
+   Design direction: Editorial Luxury
+   Palette: Warm Ivory · Deep Burgundy · Warm Charcoal · Muted Brass
    ========================================================================== */
+
 @theme inline {
- 
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
 
@@ -22,46 +22,124 @@
 
   --color-line: var(--line);
   --color-line-light: var(--line-light);
+
+  --color-burgundy: var(--burgundy);
+  --color-burgundy-dark: var(--burgundy-dark);
+  --color-burgundy-soft: var(--burgundy-soft);
+
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
 }
+
+/* ==========================================================================
+   Color tokens
+   ========================================================================== */
 
 :root {
+  color-scheme: light;
 
-  /* Text */
-  --ink: #16202B;
-  --ink-soft: #5D6773;
+  /* Typography */
+  --ink: #292522;
+  --ink-soft: #756a63;
 
-  /* Background */
-  --paper: #FBF8F3;
-  --paper-warm: #F4EFE6;
+  /* Backgrounds */
+  --paper: #f7f1e7;
+  --paper-warm: #ede3d5;
+  --surface: #fcf9f4;
+  --surface-hover: #f1e7da;
 
-  /* Primary */
-  --primary: #243447;
-  --primary-dark: #16222F;
+  /* Brand */
+  --primary: #641f2b;
+  --primary-dark: #48151f;
 
-  /* Accent */
-  --gold: #B08D57;
-  --gold-light: #D4B483;
+  /* Burgundy variants */
+  --burgundy: #641f2b;
+  --burgundy-dark: #48151f;
+  --burgundy-soft: #f0e1e1;
+
+  /* Muted brass */
+  --gold: #947044;
+  --gold-light: #c6a77d;
 
   /* Borders */
-  --line: #DDD4C7;
-  --line-light: #F6F2EB;
+  --line: #dcd0c0;
+  --line-light: #eae0d3;
 
+  /* Typography */
+  --font-body: var(--font-vazirmatn), "Vazirmatn", Tahoma, sans-serif;
+  --font-display: var(--font-display-serif), "Noto Naskh Arabic", serif;
+
+  /* Shape and depth */
+  --radius-card: 0.75rem;
+  --shadow-soft: 0 8px 30px rgb(41 37 34 / 5%);
+  --shadow-elevated: 0 18px 48px rgb(41 37 34 / 9%);
+
+  /* Focus */
+  --focus-ring: #641f2b;
 }
 
-body{
-    font-family: var(--font-body);
-}
-
+/* ==========================================================================
+   Base
+   ========================================================================== */
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button,
+  [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  ::selection {
+    background-color: var(--burgundy);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 4px;
   }
 
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
     }
+
     *,
     *::before,
     *::after {
@@ -71,37 +149,60 @@ body{
       scroll-behavior: auto !important;
     }
   }
-
-  body {
-    background-color: var(--paper);
-    color: var(--ink);
-    font-family: var(--font-body), "Vazirmatn", Tahoma, sans-serif;
-  }
-
-  ::selection {
-    background-color: var(--burgundy);
-    color: var(--paper);
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--burgundy);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
 }
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-display), "Noto Naskh Arabic", serif;
+    font-family: var(--font-display);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .surface-elevated {
+    background-color: var(--surface);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .editorial-divider {
+    height: 1px;
+    background-color: var(--line);
+  }
+
+  .text-editorial {
+    color: var(--burgundy);
+  }
+
+  .bg-editorial {
+    background-color: var(--burgundy);
+    color: #ffffff;
+  }
+
+  .focus-editorial:focus-visible {
+    outline: 2px solid var(--burgundy);
+    outline-offset: 4px;
   }
 }
 
-/* One-time, gentle entrance for the hero — not a looping/pulsing animation */
+/* ==========================================================================
+   Motion
+   ========================================================================== */
+
 @keyframes fade-up {
   from {
     opacity: 0;
     transform: translateY(14px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -112,3 +213,8 @@ body{
   animation: fade-up 0.7s ease-out both;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}
