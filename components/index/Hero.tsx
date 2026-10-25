@@ -123,7 +123,7 @@ export default function Hero() {
               {/* Photo */}
               <div className="absolute inset-0 overflow-hidden rounded-b-xl rounded-t-[999px] bg-primary shadow-[0_30px_60px_-30px_rgba(72,21,31,0.5)]">
                 <Image
-                  src="/images/mt.jpg"
+                  src="/images/mt2.jpg"
                   alt="سرکار خانم مریم طاهری، وکیل پایه یک دادگستری"
                   fill
                   priority
