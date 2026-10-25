@@ -146,7 +146,7 @@ export default function Contact() {
 
         <div className="mt-12 grid  sm:mt-14 lg:grid-cols-[1.1fr_0.9fr]">
           {/* ===== Consultation request sheet ===== */}
-          <div className="relative overflow-hidden rounded-t-2xl md:rounded-r-4xl border border-line bg-surface p-6 shadow-[0_24px_60px_-40px_rgba(72,21,31,0.35)] sm:p-9 lg:p-10">
+          <div className="relative overflow-hidden rounded-t-2xl md:rounded-r-4xl md:rounded-l-none border border-line bg-surface p-6 shadow-[0_24px_60px_-40px_rgba(72,21,31,0.35)] sm:p-9 lg:p-10">
             <span
               aria-hidden="true"
               className="absolute inset-x-0 top-0 h-0.5 bg-linear-to-l from-gold via-gold/40 to-transparent"
@@ -268,7 +268,7 @@ export default function Contact() {
           </div>
 
           {/* ===== Contact details ===== */}
-          <aside className="relative overflow-hidden rounded-b-2xl md:rounded-l-4xl bg-primary p-6 text-paper sm:p-9 lg:p-10">
+          <aside className="relative overflow-hidden rounded-b-2xl md:rounded-l-4xl md:rounded-r-none bg-primary p-6 text-paper sm:p-9 lg:p-10">
             <span
               aria-hidden="true"
               className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full border border-gold-light/15"
